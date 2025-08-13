@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Brain Tumor Detection with CNN - Blog | DevFolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Brain Tumor Detection using Convolutional Neural Networks (CNN) on MRI scans" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="dark-theme">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">DevFolio</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="index.html#home" class="nav-item nav-link">Home</a>
+            <a href="index.html#about" class="nav-item nav-link">About</a>
+            <a href="index.html#service" class="nav-item nav-link">Service</a>
+            <a href="index.html#experience" class="nav-item nav-link">Experience</a>
+            <a href="index.html#portfolio" class="nav-item nav-link">Portfolio</a>
+            <a href="index.html#blog" class="nav-item nav-link active">Blog</a>
+            <a href="index.html#contact" class="nav-item nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- Blog Detail Start -->
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+            <p class="text-light">Blog</p>
+            <h2 class="text-light">Brain Tumor Detection with CNN</h2>
+          </div>
+
+          <div class="blog-item card-dark p-3 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="blog-img mb-3 text-center">
+              <img src="img/brain.jpg" alt="Brain Tumor Detection" class="img-fluid rounded">
+            </div>
+            <div class="blog-text text-light">
+              <div class="blog-meta d-flex flex-wrap mb-3">
+                <p class="mb-0 mr-3"><i class="far fa-user"></i> Admin</p>
+                <p class="mb-0 mr-3"><i class="far fa-list-alt"></i> Deep Learning, Medical Imaging</p>
+                <p class="mb-0 mr-3"><i class="far fa-calendar-alt"></i> 4-Nov-2024</p>
+                <p class="mb-0"><i class="far fa-comments"></i> 7</p>
+              </div>
+
+              <h4 class="text-light mb-3">Project Overview</h4>
+              <p>
+                I developed a Convolutional Neural Network (CNN) to detect brain tumors from MRI scans. The model classifies
+                images into tumor vs. no-tumor (binary) and can be extended to multi-class (e.g., meningioma, glioma, pituitary)
+                depending on the dataset. The goal is to assist clinical triage by providing fast, consistent screening support.
+              </p>
+
+              <h5 class="text-light mt-4 mb-2">Dataset & Preprocessing</h5>
+              <ul>
+                <li>Standard MRI datasets; images resized to a fixed input resolution (e.g., 224×224).</li>
+                <li>Contrast normalization and skull‑stripping where applicable.</li>
+                <li>Data augmentation: flips, slight rotations, zoom, and intensity jitter to improve generalization.</li>
+                <li>Train/validation/test split with class balancing to address skew.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">CNN Architecture</h5>
+              <ul>
+                <li>Sequential Conv2D blocks with BatchNorm and ReLU, followed by MaxPooling.</li>
+                <li>Dropout between dense layers to reduce overfitting.</li>
+                <li>Final dense layer with sigmoid (binary) or softmax (multi‑class) activation.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Training Strategy</h5>
+              <ul>
+                <li>Optimizer: Adam; loss: Binary or Categorical Cross‑Entropy; metrics: accuracy, precision, recall, F1.</li>
+                <li>Callbacks: early stopping and model checkpointing on validation performance.</li>
+                <li>Learning‑rate scheduling to stabilize convergence.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Results</h5>
+              <ul>
+                <li>High validation accuracy with strong sensitivity (recall) on tumor classes.</li>
+                <li>Confusion matrix review to reduce false negatives (critical in medical settings).</li>
+                <li>Robust real‑time inference on CPU/GPU for batch or single‑image predictions.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Deployment & Usage</h5>
+              <ul>
+                <li>Batch mode for analyzing folders of MRI scans.</li>
+                <li>Simple UI option to upload an image and receive prediction with confidence score.</li>
+                <li>Extensible to DICOM pipelines and PACS integration.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Future Work</h5>
+              <ul>
+                <li>Upgrade to transfer learning (e.g., ResNet, EfficientNet) for improved accuracy.</li>
+                <li>3D CNNs on volumetric MRI sequences for richer spatial context.</li>
+                <li>Explainability (Grad‑CAM) to highlight salient tumor regions.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Ethical Note</h5>
+              <p>
+                This tool is intended for research and decision support only, not as a standalone diagnostic. Clinical decisions
+                must remain with qualified medical professionals.
+              </p>
+
+              <div class="mt-4">
+                <a class="btn" href="index.html#blog">Back to Blog <i class="fa fa-angle-left"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Blog Detail End -->
+
+    <!-- Footer Start -->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="footer-info">
+            <h2>Muhammad Farhan</h2>
+            <h3>49 Street, Islamabad, Pakistan</h3>
+            <div class="footer-menu">
+              <p>+92 332 2551960</p>
+              <p>officialforwork113@gmail.com</p>
+            </div>
+            <div class="footer-social">
+              <a href="https://x.com/farhan_king_46?t=zTujarl1BzQeAhTxuscLbg&s=09"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/Farhan51960"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/m.farhan.d_113?igsh=MTlldGZ1NHgzMTVubg%3D%3D"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/muhammad-farhan-3045a6241"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/mfarhan-113"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="container copyright">
+          <p>&copy; <a href="#">Muhammad Farhan</a>, All Right Reserved | Designed By <a href="#">Muhammad Farhan</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

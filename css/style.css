@@ -1,6 +1,25 @@
+#blog .blog-carousel { position: relative !important; }
+#blog .blog-carousel .owl-prev,
+#blog .blog-carousel .owl-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  left: auto !important;
+  right: auto !important;
+  float: none !important;
+}
+#blog .blog-carousel .owl-prev { left: 0 !important; transform: translate(-100%, -50%) !important; }
+#blog .blog-carousel .owl-next { right: 0 !important; transform: translate(100%, -50%) !important; }
+@media (max-width: 767.98px) {
+  #blog .blog-carousel .owl-prev { left: 0 !important; transform: translate(-100%, -50%) !important; }
+  #blog .blog-carousel .owl-next { right: 0 !important; transform: translate(100%, -50%) !important; }
+}
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+/* Blog: force titles to white */
+.blog .blog-text h2,
+.blog .blog-text h2 a { color: #ffffff !important; }
 body {
     color: #797979;
     background: #ffffff;
@@ -1004,11 +1023,12 @@ a:focus {
     display: flex;
     align-items: center;
     box-shadow: inset 0 0 0 0 transparent;
-    transition: ease-out 0.5s;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .service .service-item:hover {
-    box-shadow: inset 800px 0 0 0 #00bcd4;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .service .service-icon {
@@ -1030,7 +1050,7 @@ a:focus {
 }
 
 .service .service-item:hover i {
-    font-size: 75px;
+    font-size: 60px;
 }
 
 .service .service-text {
@@ -1054,7 +1074,7 @@ a:focus {
 
 .service .service-item:hover .service-text h3,
 .service .service-item:hover .service-text p {
-    color: #ffffff;
+    color: inherit;
 }
 
 @media (max-width: 575.98px) {
@@ -1854,4 +1874,160 @@ a:focus {
         line-height: 16px;
         padding: 0 5px;
     }
+}
+
+
+/*******************************/
+/* Glassmorphism (Modal) CSS  */
+/*******************************/
+.modal-content.glass {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border-radius: 16px;
+}
+
+.dark-theme .modal-content.glass {
+    background: rgba(24, 24, 24, 0.55) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.modal-content.glass .modal-header,
+.modal-content.glass .modal-body {
+    background: transparent;
+}
+
+.dark-theme .modal-header .close span,
+.modal-header .close span {
+    color: #ffffff;
+}
+
+/* Portfolio modal sizing and text color */
+#portfolioModal .modal-dialog {
+    max-width: 900px; /* desktop cap */
+}
+
+@media (max-width: 992px) {
+    #portfolioModal .modal-dialog {
+        max-width: 95vw; /* responsive on tablets/mobiles */
+        margin: 0 auto;
+    }
+}
+
+#portfolioModal .modal-title,
+#portfolioModal .modal-body,
+#portfolioModal .modal-body p,
+#portfolioModal .modal-body a {
+    color: #ffffff !important; /* force white text/links */
+}
+
+#portfolioModalImg {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Blog carousel nav positioning */
+.blog .blog-carousel,
+.blog .owl-carousel {
+    position: relative;
+}
+
+.blog .blog-carousel .owl-nav {
+    /* neutralized in favor of final flex override below */
+}
+
+.blog .blog-carousel .owl-nav button.owl-prev,
+.blog .blog-carousel .owl-nav button.owl-next {
+    /* neutralized in favor of final flex override below */
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    float: none !important;
+}
+
+/* neutralized old offsets; final placement handled by flex override */
+.blog .blog-carousel .owl-nav button.owl-prev { left: auto !important; right: auto !important; }
+.blog .blog-carousel .owl-nav button.owl-next { left: auto !important; right: auto !important; }
+/* neutralized strong specificity; final override below controls */
+.blog .blog-carousel .owl-nav button.owl-next,
+.blog .owl-carousel .owl-nav button.owl-next,
+.blog .owl-nav .owl-next { left: auto !important; right: auto !important }
+
+/* Use existing button look from navText */
+.blog .owl-nav button span.btn {
+    padding: 6px 10px;
+    border-radius: 50px;
+}
+
+/* Dark theme contrast for outline buttons */
+.dark-theme .blog .owl-nav button span.btn.btn-outline-light {
+    border-color: rgba(255,255,255,0.6);
+    color: #fff;
+}
+.dark-theme .blog .owl-nav button span.btn.btn-outline-light:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+@media (max-width: 767.98px) {
+    /* neutralized mobile offsets; final override handles spacing */
+    .blog .blog-carousel .owl-nav button.owl-prev { left: auto !important; right: auto !important; }
+    .blog .blog-carousel .owl-nav button.owl-next { left: auto !important; right: auto !important; }
+    .blog .blog-carousel .owl-nav .owl-next,
+    .blog .owl-carousel .owl-nav .owl-next { left: auto !important; right: auto !important; }
+}
+
+/* Final hard overrides for blog slider arrows */
+#blog .blog-carousel { position: relative; }
+#blog .blog-carousel .owl-nav {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: translateY(-50%) !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+}
+#blog .blog-carousel .owl-nav button {
+  position: absolute !important;
+  top: 0 !important;           /* container is centered; buttons sit at its top */
+  transform: none !important;  /* avoid double translate */
+  pointer-events: auto !important;
+  float: none !important;
+}
+#blog .blog-carousel .owl-nav .owl-prev {
+  left: -16px !important;
+  right: auto !important;
+}
+#blog .blog-carousel .owl-nav .owl-next {
+  right: -16px !important;
+  left: auto !important;
+}
+@media (max-width: 767.98px) {
+  #blog .blog-carousel .owl-nav .owl-prev { left: -8px !important; }
+  #blog .blog-carousel .owl-nav .owl-next { right: -8px !important; }
+}
+
+/* Ultimate overrides for Blog Owl nav to avoid any redundancy conflicts */
+#blog .owl-nav {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: translateY(-50%) !important;
+  height: 0 !important; /* keep layout unaffected */
+  pointer-events: none !important; /* only buttons clickable */
+  z-index: 9 !important;
+}
+#blog .owl-nav button,
+#blog .owl-nav .owl-prev,
+#blog .owl-nav .owl-next {
+  /* do not override position/offsets here; top rules handle placement */
+  pointer-events: auto !important;
+  float: none !important;
 }

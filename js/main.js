@@ -91,7 +91,22 @@
         }
     });
     
-    
+    // Blog carousel
+    $(".blog-carousel").owlCarousel({
+        autoplay: false,
+        dots: false,
+        loop: true,
+        margin: 30,
+        nav: true,
+        navText: [
+            '<span class="btn btn-outline-light"><i class="fa fa-angle-left"></i></span>',
+            '<span class="btn btn-outline-light"><i class="fa fa-angle-right"></i></span>'
+        ],
+        responsive: {
+            0: { items: 1 },
+            768: { items: 2 }
+        }
+    });
     
     // Portfolio filter
     var portfolioIsotope = $('.portfolio-container').isotope({
@@ -103,6 +118,57 @@
         $("#portfolio-filter li").removeClass('filter-active');
         $(this).addClass('filter-active');
         portfolioIsotope.isotope({filter: $(this).data('filter')});
+    });
+    
+    // Portfolio modal opener
+    $(document).on('click', '.open-portfolio', function (e) {
+        e.preventDefault();
+        var $btn = $(this);
+        var title = $btn.data('title') || 'Project';
+        var desc = $btn.data('desc') || '';
+        var link = $btn.attr('href') || $btn.data('link') || '';
+        var linksStr = $btn.data('links') || '';
+        var imgSrc = $btn.closest('.portfolio-wrap').find('.portfolio-img img').attr('src') || '';
+
+        $('#portfolioModalLabel').text(title);
+        if (linksStr) {
+            // Parse semicolon-separated list of url|label pairs
+            var items = String(linksStr).split(';').map(function (pair) {
+                var parts = pair.split('|');
+                return { url: (parts[0] || '').trim(), label: (parts[1] || '').trim() };
+            }).filter(function (it) { return it.url; });
+            var html = '<ol class="mb-0 pl-3">';
+            items.forEach(function (it) {
+                var safeLabel = $('<div/>').text(it.label || it.url).html();
+                var safeUrl = $('<div/>').text(it.url).text();
+                html += '<li class="mb-1"><a href="' + safeUrl + '" target="_blank" rel="noopener">' + safeLabel + '</a></li>';
+            });
+            html += '</ol>';
+            $('#portfolioModalDesc').html(html);
+        } else if (link) {
+            // Safely set desc as single link text
+            var safeText = $('<div/>').text(desc).html();
+            $('#portfolioModalDesc').html('<a href="' + link + '" target="_blank" rel="noopener">' + safeText + '</a>');
+        } else {
+            $('#portfolioModalDesc').text(desc);
+        }
+        $('#portfolioModalImg').attr('src', imgSrc);
+        $('#portfolioModal').modal('show');
+    });
+
+    // Close modal and smooth scroll when clicking in-modal hash links
+    $(document).on('click', '#portfolioModalDesc a[href^="#"]', function (e) {
+        var target = this.getAttribute('href');
+        if (target && target.charAt(0) === '#') {
+            e.preventDefault();
+            $('#portfolioModal').modal('hide');
+            var $t = $(target);
+            if ($t.length) {
+                $('html, body').animate({ scrollTop: $t.offset().top - 60 }, 600);
+            } else {
+                window.location.hash = target;
+            }
+        }
     });
     
 })(jQuery);
