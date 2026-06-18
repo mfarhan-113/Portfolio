@@ -1,898 +1,716 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>DevFolio - Developer Portfolio</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Farhan — AI Engineer & Full Stack Developer</title>
+    <meta name="description" content="Muhammad Farhan is an AI Engineer and Full Stack Developer specializing in computer vision, deep learning, and production-grade ML systems. Based in Islamabad, Pakistan.">
+    <meta name="keywords" content="AI Engineer, Full Stack Developer, Computer Vision, Deep Learning, Muhammad Farhan, Python, FastAPI, React, Portfolio">
+    <meta name="author" content="Muhammad Farhan">
+    <meta name="robots" content="index, follow">
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Muhammad Farhan — AI Engineer & Full Stack Developer">
+    <meta property="og:description" content="Building intelligent systems that solve real-world problems. Specializing in computer vision, deep learning, and full-stack development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mfarhan-113.github.io/Portfolio/">
 
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammad Farhan — AI Engineer & Full Stack Developer">
+    <meta name="twitter:description" content="Building intelligent systems that solve real-world problems.">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='40' font-family='Arial' font-weight='700' fill='%2306b6d4'%3EMF%3C/text%3E%3C/svg%3E">
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="51" class="dark-theme">
-        <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-light navbar-light">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">DevFolio</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Farhan",
+        "jobTitle": "AI Engineer",
+        "url": "https://mfarhan-113.github.io/Portfolio/",
+        "email": "officialforwork113@gmail.com",
+        "telephone": "+923322551960",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Islamabad",
+            "addressCountry": "Pakistan"
+        },
+        "sameAs": [
+            "https://github.com/mfarhan-113",
+            "https://www.linkedin.com/in/muhammad-farhan-3045a6241",
+            "https://x.com/farhan_king_46"
+        ],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Bahria University Islamabad"
+        },
+        "knowsAbout": ["Artificial Intelligence", "Computer Vision", "Deep Learning", "Full Stack Development", "Python", "FastAPI", "React"]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="loader-text">MF</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">MF<span>.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="Farhan-CV.pdf" download class="btn-cv-nav">
+                    <i class="fas fa-download"></i> Resume
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span></span><span></span><span></span>
                 </button>
-
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
-                        <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                        <a href="#service" class="nav-item nav-link">Service</a>
-                        <a href="#experience" class="nav-item nav-link">Experience</a>
-                        <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                        <!-- <a href="#price" class="nav-item nav-link">Price</a>
-                        <a href="#review" class="nav-item nav-link">Review</a>
-                        <a href="#team" class="nav-item nav-link">Team</a> -->
-                        <a href="#blog" class="nav-item nav-link">Blog</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- Nav Bar End -->
+    </nav>
 
-
-        <!-- Hero Start -->
-        <div class="hero" id="home">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="hero-content">
-                            <div class="hero-text">
-                                <p>I'm</p>
-                                <h1>Muhammad Farhan</h1>
-                                <h2></h2>
-                                <div class="typed-text">AI Engineer, Data Scientist, Web Developer</div>
-                            </div>
-                            <div class="hero-btn">
-                                <a class="btn" href="">Hire Me</a>
-                                <a class="btn" href="">Contact Me</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 d-none d-md-block">
-                        <div class="hero-image">
-                            <img src="img/me.png" alt="Hero Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hero End -->
-
-
-        <!-- About Start -->
-        <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="img/me2.jpeg" alt="Image">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-header text-left">
-                                <p>Learn About Me</p>
-                                <h2>About me</h2>
-                            </div>
-                            <div class="about-text">
-                                <p>I am a versatile developer with expertise in web and app development, alongside strong skills in Artificial Intelligence, data science and analysis. Passionate about creating innovative solutions that blend technology and insights to drive impactful results</p>
-                            </div>
-                            <div class="skills">
-                                <div class="skill-name">
-                                    <p>App Development</p><p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Data Analyst</p><p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Data Scientist/ML Engineer</p><p>90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-    <p>Web Development</p><p>95%</p>
-</div>
-<div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="skill-name">
-    <p>AI Engineer</p><p>92%</p>
-</div>
-<div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-                            <a class="btn" href="">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-        
-        
-        <!-- Service Start -->
-        <div class="service" id="service">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>What I do</p>
-                    <h2>Awesome Quality Services</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="service-item card-dark">
-                            <div class="service-icon">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>App development</h3>
-                                <p>
-                                    Building intuitive and high-performance mobile applications for seamless user experiences.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item card-dark">
-                            <div class="service-icon">
-                                <i class="fa fa-laptop-code"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Web Development</h3>
-                                <p>
-                                    Crafting responsive and user-friendly websites tailored to your needs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item card-dark">
-                            <div class="service-icon">
-                                <i class="fa fa-chart-bar"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Data Analyst</h3>
-                                <p>
-                                    Transforming raw data into actionable insights through visualization and analysis.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-    <div class="service-item card-dark">
-        <div class="service-icon">
-            <i class="fa fa-project-diagram"></i>
-        </div>
-        <div class="service-text">
-            <h3>Data Scientist</h3>
-            <p>
-                Leveraging data to uncover insights, build predictive models, and drive smarter decisions.
-            </p>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-links">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="Farhan-CV.pdf" download class="btn btn-primary mobile-cv">Download CV</a>
         </div>
     </div>
-</div>
-<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
-    <div class="service-item card-dark">
-        <div class="service-icon">
-            <i class="fa fa-robot"></i>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="assets/hero-ai-systems.png" alt="" class="hero-visual" aria-hidden="true">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
         </div>
-        <div class="service-text">
-            <h3>AI Engineer</h3>
-            <p>
-                Building intelligent systems and deploying AI-powered solutions for real-world impact.
-            </p>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting reveal-up">Hi there, I'm</p>
+                <h1 class="hero-name reveal-up">Muhammad<br><span class="gradient-text">Farhan</span></h1>
+                <div class="hero-role reveal-up">
+                    <span id="typedText"></span><span class="typed-cursor">|</span>
+                </div>
+                <p class="hero-desc reveal-up">Building intelligent systems that solve real-world problems — from computer vision pipelines to production AI platforms.</p>
+                <div class="hero-cta reveal-up">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="Farhan-CV.pdf" download class="btn btn-outline">
+                        <span>Download CV</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-social reveal-up">
+                <div class="social-line"></div>
+                <a href="https://github.com/mfarhan-113" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/muhammad-farhan-3045a6241" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/farhan_king_46" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/m.farhan.d_113" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <div class="social-line"></div>
+            </div>
         </div>
-    </div>
-</div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Passionate AI Engineer &<br><span class="gradient-text">Full Stack Developer</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-up">
+                    <p>Results-driven Computer Vision and AI Engineer with hands-on experience building and deploying CV/ML systems in production environments. I specialize in deep learning, real-time computer vision, and end-to-end full-stack development.</p>
+                    <p>From healthcare RCM platforms to AI telephone assistants, I've delivered production-grade solutions across healthcare, legal tech, marketing analytics, and fitness. I work across the full stack — designing architectures, training models, building APIs, and deploying on cloud infrastructure.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="12">0</h3>
+                            <p>Projects Delivered</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="3">0</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="8">0</h3>
+                            <p>AI Models Deployed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="15">0</h3>
+                            <p>Technologies</p>
+                        </div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="Farhan-CV.pdf" download class="btn btn-primary">
+                            <span>Download Resume</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-skills reveal-up">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-eye"></i> Computer Vision & ML</h4>
+                        <div class="skill-tags">
+                            <span>Object Detection</span>
+                            <span>Image Segmentation</span>
+                            <span>CNNs</span>
+                            <span>GANs</span>
+                            <span>Transformers</span>
+                            <span>Transfer Learning</span>
+                            <span>Edge AI</span>
+                            <span>YOLO</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-code"></i> Frameworks & Libraries</h4>
+                        <div class="skill-tags">
+                            <span>PyTorch</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                            <span>FastAPI</span>
+                            <span>Flask</span>
+                            <span>Django</span>
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>LangChain</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-terminal"></i> Languages</h4>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>C++</span>
+                            <span>Dart</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-cloud"></i> Cloud & MLOps</h4>
+                        <div class="skill-tags">
+                            <span>Docker</span>
+                            <span>Azure</span>
+                            <span>AWS</span>
+                            <span>CI/CD</span>
+                            <span>GitHub Actions</span>
+                            <span>Firebase</span>
+                            <span>Supabase</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-database"></i> Databases</h4>
+                        <div class="skill-tags">
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                            <span>MySQL</span>
+                            <span>Redis</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Service End -->
-        
-        
-         <!-- Experience Start -->
-        <div class="experience" id="experience">
-            <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p class="text-light">My Resume</p>
-                    <h2 class="text-light">Working Experience</h2>
-                </header>
-                <div class="timeline">
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2025 - Present</div>
-                            <h2 class="text-light">AI Engineer</h2>
-                            <h4 class="text-light">NTIS Pak, Islamabad</h4>
-                            <p class="text-light">
-                                Appointed as AI Engineer at NTIS Pak, building production-grade ML systems, optimizing pipelines, and delivering intelligent automation solutions.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.2s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2025</div>
-                            <h2 class="text-light">AI Engineer</h2>
-                            <h4 class="text-light">Amal Axis, NASTP, Islamabad</h4>
-                            <p class="text-light">
-                                Leading AI initiatives, developing machine learning models, and deploying AI-driven solutions for national and international clients. Spearheading AI research and innovation at Amal Axis, NASTP.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2024 - 2025</div>
-                            <h2 class="text-light">Web Developer</h2>
-                            <h4 class="text-light">QuantaByte, Bahria Town Phase 2, Islamabad</h4>
-                            <p class="text-light">
-                                Worked as Lead Backend Developer, managed team and delivered scalable web solutions for clients. Led projects through full development lifecycle, implemented best practices, and mentored junior developers.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2024</div>
-                            <h2 class="text-light">Web Developer Internship</h2>
-                            <h4 class="text-light">Insafdaar, Abbotabad</h4>
-                            <p class="text-light">
-                                2 month Internship as a web developer.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2024 - 2025</div>
-                            <h2 class="text-light">Web Developer</h2>
-                            <h4 class="text-light">Client Project</h4>
-                            <p class="text-light">
-                                One of my project <a href="http://digitalserviceproviders.com" class="text-light">Digital Service Provider</a>.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2024 - 2025</div>
-                            <h2 class="text-light">App Developer</h2>
-                            <h4 class="text-light">Client Project</h4>
-                            <p class="text-light">
-                                Develop an MyEyes for blind people, integrating ML model with interface.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text card-dark">
-                            <div class="timeline-date">2024 - 2025</div>
-                            <h2 class="text-light">Data Scientist</h2>
-                            <h4 class="text-light">Client Project</h4>
-                            <p class="text-light">
-                                Develop a Road Layer Detection system for volume calculation of layer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Career</span>
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
             </div>
-        </div>
-        <!-- Job Experience End -->
-
-
-        <!-- Portfolio Start -->
-        <div class="portfolio" id="portfolio">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p class="text-light">My Portfolio</p>
-                    <h2 class="text-light">My Excellent Portfolio</h2>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <ul id="portfolio-filter">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-1">Web Application</li>
-                            <li data-filter=".filter-2">Mobile Apps</li>
-                            <li data-filter=".filter-3">Data Scientist</li>
-                            <li data-filter=".filter-ai">AI</li>
+            <div class="timeline">
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Current</div>
+                        <div class="timeline-date">Dec 2025 — Present</div>
+                        <h3>AI Engineer</h3>
+                        <h4>AI Data House <span>| Islamabad, Pakistan</span></h4>
+                        <ul>
+                            <li>Designing and deploying custom computer vision models across OpenAI Vision, Azure AI Vision, AWS Rekognition, and custom-trained architectures</li>
+                            <li>Built hybrid CV pipeline for electrical diagram analysis with 85% accuracy combining OCR and vision model outputs</li>
+                            <li>Developed and deployed RAG-based AI systems on Azure (AI Services, Container Apps) and AWS (EC2, S3)</li>
+                            <li>Delivered OpenClaw-based AI automation agent enabling task execution with full data privacy on client hardware</li>
                         </ul>
                     </div>
                 </div>
-                <div class="row portfolio-container">
-                    <!-- Web Applications (with placeholder links) -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="portfolio-wrap card-dark">
-                            <div class="portfolio-img">
-                                <a href="https://jhelumnews.uk/" target="_blank" rel="noopener">
-                                    <img src="img/portfolio-1.jpg" alt="Website Showcase Image">
-                                </a>
-                            </div>
-                            <div class="portfolio-text">
-                                <h3 class="text-light"><a href="https://jhelumnews.uk/" target="_blank" rel="noopener" class="text-light">Websites</a></h3>
-                                <!-- Additional website link under the same card -->
-                                <a class="btn btn-light open-portfolio" href="#" data-title="Websites" data-desc="" data-links="https://jhelumnews.uk|Jhelum News;https://amalride.com|AmalRide;https://digitalserviceproviders.com|Digital Service Providers">+</a>
-                            </div>
-                        </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2025 — Dec 2025</div>
+                        <h3>AI Engineer</h3>
+                        <h4>NTIS PAK <span>| Islamabad, Pakistan</span></h4>
+                        <ul>
+                            <li>Developed and optimized AI models for automated translation using Python, TensorFlow, Keras, and ElevenLabs</li>
+                            <li>Led team implementing NLP and predictive analytics to replace manual interpretation with AI-driven systems</li>
+                            <li>Automated translation workflows for UK-based clients, improving speed, accuracy, and scalability</li>
+                        </ul>
                     </div>
-                    
-
-                    <!-- AI Projects -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-ai wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap card-dark">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-ai.jpg" alt="AI Project Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3 class="text-light">AI Projects</h3>
-                                <a class="btn btn-light open-portfolio" href="#" data-title="AI Projects" data-desc="" data-links="#road-layer-detection|Road Layer Detection;#virtual-assistant|Virtual Assistant;#uni-guide|UniGuide">+</a>
-                            </div>
-                        </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Mar 2025 — Jul 2025</div>
+                        <h3>AI Engineer</h3>
+                        <h4>Amal Axis <span>| Islamabad, Pakistan</span></h4>
+                        <ul>
+                            <li>Developed and maintained AI applications with scalable, reusable code and managed cloud deployments</li>
+                            <li>Implemented and optimized ML/DL models; collaborated with cross-functional teams on product delivery</li>
+                            <li>Troubleshot performance bottlenecks and stayed current with Python frameworks and ML research</li>
+                        </ul>
                     </div>
-                    
-
-                    <!-- Data Science / ML Engineer -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="portfolio-wrap card-dark">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-3.jpg" alt="Data Science Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3 class="text-light">Data Science</h3>
-                                <a class="btn btn-light open-portfolio" href="#" data-title="Data Science" data-desc="" data-links="#fer|Facial Emotion Recognition;#brain|Brain Tumor Detection">+</a>
-                            </div>
-                        </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2023 — Present</div>
+                        <h3>Freelance AI & Full Stack Developer</h3>
+                        <h4>Remote <span>| Pakistan</span></h4>
+                        <ul>
+                            <li>Architected NextNRGie full-stack SaaS with FastAPI, MySQL, CI/CD, Docker, and React frontend</li>
+                            <li>Delivered end-to-end AI and full-stack solutions including model training, backend APIs, and responsive frontends for multiple clients</li>
+                        </ul>
                     </div>
-                    
+                </div>
+            </div>
 
-                    <!-- Mobile Apps -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="portfolio-wrap card-dark">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-5.jpg" alt="Mobile App Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3 class="text-light">Mobile App</h3>
-                                <a class="btn btn-light open-portfolio" href="#" data-title="Mobile App" data-desc="" data-links="#my-eyes|My Eyes">+</a>
-                            </div>
-                        </div>
+            <!-- Education -->
+            <div class="education-block reveal-up">
+                <div class="section-header" style="margin-top: 4rem;">
+                    <span class="section-tag">Education</span>
+                </div>
+                <div class="education-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-content">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <h4>Bahria University Islamabad <span>| Oct 2021 — Jun 2025</span></h4>
+                        <p><strong>CGPA: 3.54 / 4.00</strong> | Thesis: Cartoon Sketch Colorization (AI-based GAN system)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="education-block reveal-up">
+                <div class="section-header" style="margin-top: 2rem;">
+                    <span class="section-tag">Certifications</span>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Oracle Generative AI Professional</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Google Data Analytics Professional</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Team Lead — NASCON'24 Speed Programming, FAST</span>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio End -->
-        
-        <!-- Portfolio Modal Start -->
-        <div class="modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content glass">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="portfolioModalLabel">Project</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">A selection of projects I've built — from AI platforms to production systems</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="project-filters reveal-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="project-grid">
+
+                <!-- Braidscope -->
+                <div class="project-card reveal-up" data-category="ai fullstack" data-project="braidscope">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #06b6d4;"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <img id="portfolioModalImg" src="" alt="Project Image" class="img-fluid mb-3" />
-                        <p id="portfolioModalDesc" class="mb-2"></p>
+                    <span class="project-badge">AI Platform</span>
+                    <h3>Braidscope</h3>
+                    <p>Multi-tenant marketing analytics with AI chat, OAuth integrations, live dashboards for GA4, Google Ads, Meta Ads, Klaviyo, and HubSpot.</p>
+                    <div class="project-tags">
+                        <span>React</span><span>FastAPI</span><span>Redis</span><span>Supabase</span><span>Docker</span><span>MCP</span>
                     </div>
+                </div>
+
+                <!-- Stratum -->
+                <div class="project-card reveal-up" data-category="fullstack healthcare" data-project="stratum">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #8b5cf6;"><i class="fas fa-hospital"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">Healthcare</span>
+                    <h3>Stratum / Gemini Derm</h3>
+                    <p>End-to-end revenue cycle management for dermatology — patient intake, insurance eligibility, AI/OCR face sheet extraction, and denial management.</p>
+                    <div class="project-tags">
+                        <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>TypeScript</span><span>Gemini AI</span><span>pVerify</span>
+                    </div>
+                </div>
+
+                <!-- MedCenter Volta -->
+                <div class="project-card reveal-up" data-category="ai" data-project="medcenter">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #f59e0b;"><i class="fas fa-phone-alt"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">AI Voice</span>
+                    <h3>MedCenter Volta</h3>
+                    <p>Production AI telephone assistant handling patient calls via Azure Communication Services, Deepgram Voice Agent, and appointment booking through EPAAD/OneDoc.</p>
+                    <div class="project-tags">
+                        <span>Python</span><span>FastAPI</span><span>Azure</span><span>Deepgram</span><span>WebSocket</span><span>OpenAI</span>
+                    </div>
+                </div>
+
+                <!-- Eeknova -->
+                <div class="project-card reveal-up" data-category="ai cv" data-project="eeknova">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #10b981;"><i class="fas fa-dumbbell"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">AI / CV</span>
+                    <h3>Eeknova AI Trainer</h3>
+                    <p>Real-time yoga pose correction with YOLO, 3D avatar coaching via Three.js, Zumba movement analysis, interactive chess training, and progress tracking.</p>
+                    <div class="project-tags">
+                        <span>Next.js</span><span>FastAPI</span><span>YOLOv11</span><span>Three.js</span><span>WebSocket</span><span>SQLite</span>
+                    </div>
+                </div>
+
+                <!-- Legal AI -->
+                <div class="project-card reveal-up" data-category="ai" data-project="legal">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #ef4444;"><i class="fas fa-balance-scale"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">Legal AI</span>
+                    <h3>Legal Document Assistant</h3>
+                    <p>Multi-agent RAG system for legal teams — document search, Q&A, OCR processing, and source-backed answers delivered through WhatsApp.</p>
+                    <div class="project-tags">
+                        <span>FastAPI</span><span>Azure OpenAI</span><span>AI Search</span><span>LangGraph</span><span>GreenAPI</span>
+                    </div>
+                </div>
+
+                <!-- Cartoon Colorization -->
+                <div class="project-card reveal-up" data-category="ai cv" data-project="colorization">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #ec4899;"><i class="fas fa-palette"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">FYP</span>
+                    <h3>Sketch Colorization</h3>
+                    <p>AI platform colorizing cartoon sketches using Pix2Pix GAN and generating images from text prompts via Stable Diffusion with interactive 3D UI.</p>
+                    <div class="project-tags">
+                        <span>PyTorch</span><span>Pix2Pix GAN</span><span>Stable Diffusion</span><span>React</span><span>Three.js</span>
+                    </div>
+                </div>
+
+                <!-- NextNRGie -->
+                <div class="project-card reveal-up" data-category="fullstack" data-project="nextnrgie">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #3b82f6;"><i class="fas fa-bolt"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">SaaS</span>
+                    <h3>NextNRGie</h3>
+                    <p>Full-stack SaaS for client lifecycle management — contracts, estimates, invoices with JWT auth, automated PDF generation, and multilingual frontend.</p>
+                    <div class="project-tags">
+                        <span>FastAPI</span><span>MySQL</span><span>React</span><span>Docker</span><span>CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- My Eyes -->
+                <div class="project-card reveal-up" data-category="cv ai" data-project="myeyes">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #14b8a6;"><i class="fas fa-eye"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">Mobile / AI</span>
+                    <h3>My Eyes</h3>
+                    <p>Flutter app with YOLO object detection and TTS for real-time assistance for visually impaired users. HEC stipend of PKR 80,000 awarded.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span><span>YOLO</span><span>TTS</span><span>Dart</span>
+                    </div>
+                </div>
+
+                <!-- Road Layer -->
+                <div class="project-card reveal-up" data-category="cv ai" data-project="roadlayer">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #f97316;"><i class="fas fa-road"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">Computer Vision</span>
+                    <h3>Road Layer Detection</h3>
+                    <p>Analyzes road construction progress by comparing point cloud data, calculating layer thickness and volume for base/subgrade phases.</p>
+                    <div class="project-tags">
+                        <span>Python</span><span>OpenCV</span><span>Point Cloud</span><span>FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- Brain Tumor -->
+                <div class="project-card reveal-up" data-category="cv ai healthcare" data-project="braintumor">
+                    <div class="project-card-header">
+                        <div class="project-icon" style="--accent: #a855f7;"><i class="fas fa-brain"></i></div>
+                        <div class="project-links">
+                            <button class="project-detail-btn" aria-label="View details"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <span class="project-badge">Medical AI</span>
+                    <h3>Brain Tumor Classifier</h3>
+                    <p>CNN-based MRI classifier using VGG16/ResNet achieving 92% accuracy on 3,000+ brain scans for tumor detection.</p>
+                    <div class="project-tags">
+                        <span>TensorFlow</span><span>VGG16</span><span>ResNet</span><span>OpenCV</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECT MODAL ==================== -->
+    <div class="modal-overlay" id="projectModal" aria-hidden="true">
+        <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <span class="modal-badge" id="modalBadge"></span>
+                <h2 id="modalTitle"></h2>
+                <p class="modal-subtitle" id="modalSubtitle"></p>
+                <div class="modal-section">
+                    <h4>Overview</h4>
+                    <p id="modalOverview"></p>
+                </div>
+                <div class="modal-section">
+                    <h4>Key Features</h4>
+                    <ul id="modalFeatures"></ul>
+                </div>
+                <div class="modal-section">
+                    <h4>Tech Stack</h4>
+                    <div class="modal-tech" id="modalTech"></div>
+                </div>
+                <div class="modal-section" id="modalRoleSection">
+                    <h4>My Role</h4>
+                    <p id="modalRole"></p>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal End -->
-        
-        
-        <!-- Banner Start -->
-        <!-- <div class="banner wow zoomIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Awesome Discount</p>
-                    <h2>Get <span>30%</span> Discount</h2>
-                </div>
-                <div class="container banner-text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. 
-                    </p>
-                    <a class="btn">Order Now</a>
-                </div>
-            </div>
-        </div> -->
-        <!-- Banner End -->
-        
-        
-        <!-- Price Start -->
-        <!-- <div class="price" id="price">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Pricing Plan</p>
-                    <h2>Affordable Price</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Basic</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2><small>$</small>49<span>/ mo</span></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Bootstrap 4</li>
-                                        <li>Font Awesome 5</li>
-                                        <li>Responsive Design</li>
-                                        <li>Browser Compatibility</li>
-                                        <li>Easy To Use</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="price-item featured-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Standard</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2><small>$</small>99<span>/ mo</span></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Bootstrap 4</li>
-                                        <li>Font Awesome 5</li>
-                                        <li>Responsive Design</li>
-                                        <li>Browser Compatibility</li>
-                                        <li>Easy To Use</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Premium</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2><small>$</small>149<span>/ mo</span></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Bootstrap 4</li>
-                                        <li>Font Awesome 5</li>
-                                        <li>Responsive Design</li>
-                                        <li>Browser Compatibility</li>
-                                        <li>Easy To Use</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Price End -->
-        
-        
-        <!-- Testimonial Start -->
-        <!-- <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
-            <div class="container">
-                <div class="testimonial-icon">
-                    <i class="fa fa-quote-left"></i>
-                </div>
-                <div class="owl-carousel testimonials-carousel">
-                    <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
-                            </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
-                            </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum dolor sit amet consec adipis elit.
-                            </p>
-                            <h3>Customer Name</h3>
-                            <h4>Profession</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Testimonial End -->
+    </div>
 
-
-        <!-- Team Start -->
-        <!-- <div class="team" id="team">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>My Team</p>
-                    <h2>Expert Team Members</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Mollie Ross</h2>
-                                <h4>Web Designer</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Dylan Adams</h2>
-                                <h4>Web Developer</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Jennifer Page</h2>
-                                <h4>Apps Designer</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Josh Dunn</h2>
-                                <h4>Apps Developer</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">Services I <span class="gradient-text">Offer</span></h2>
             </div>
-        </div> -->
-        <!-- Team End -->
-        
-        
-        <!-- Contact Start -->
-        <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-8">
-                            <div class="contact-form">
-                                <div id="success"></div>
-                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" required="required" data-validation-required-message="Please enter your name" />
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required="required" data-validation-required-message="Please enter your email" />
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required="required" data-validation-required-message="Please enter a subject" />
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <textarea class="form-control" id="message" placeholder="Message" name="message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div>
-                                        <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI Engineering</h3>
+                    <p>Building intelligent systems with computer vision, NLP, RAG pipelines, and deep learning models for production deployment.</p>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Full Stack Development</h3>
+                    <p>End-to-end web applications with React, Next.js, FastAPI, Django — from responsive frontends to scalable backends.</p>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Computer Vision</h3>
+                    <p>Object detection, image segmentation, pose estimation, OCR, and real-time visual analysis for production systems.</p>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & MLOps</h3>
+                    <p>Docker containerization, CI/CD pipelines, Azure and AWS deployments, model serving and monitoring.</p>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Science</h3>
+                    <p>Machine learning models, data analytics, predictive systems, and actionable insights from complex datasets.</p>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Development</h3>
+                    <p>Cross-platform mobile apps with Flutter, integrating ML models and device APIs for intelligent mobile experiences.</p>
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
+    </section>
 
-
-        <!-- Blog Start -->
-        <div class="blog" id="blog">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>From Blog</p>
-                    <h2>Latest Articles</h2>
-                </div>
-                <div class="blog-carousel owl-carousel">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-img">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Jhelum News</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Web Development</p>
-                                <p><i class="far fa-calendar-alt"></i>05-Sept-2024</p>
-                            </div>
-                            <p>
-                                Jhelum News is a web platform dedicated to providing local news updates for the community of Jhelum. The project incorporates dynamic content management, multimedia integration, and responsive design for an enhanced user experience. It showcases my skills in web development, problem-solving, and creating solutions that impact local communities
-                            </p>
-                            <a class="btn" href="blog-jhelum-news.html">Read More <i class="fa fa-angle-right"></i></a>
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+                <p class="section-subtitle">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-up">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:officialforwork113@gmail.com">officialforwork113@gmail.com</a>
                         </div>
                     </div>
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.3s" id="road-layer-detection">
-                        <div class="blog-img">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Road Layer Detection</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>AI Web App</p>
-                                <p><i class="far fa-calendar-alt"></i>08-Jan-2025</p>
-                            </div>
-                            <p>
-                                The Road Layer Detection project is designed to analyze road construction progress by comparing two images: one before and one after the base and subgrade phase. The app detects road layers by calculating their thickness and volume using point cloud data. It processes the data, subtracts point cloud values to determine the thickness, and computes the volume, with the point cloud files being deleted once the process is complete.
-                            </p>
-                            <a class="btn" href="blog-road-layer-detection.html">Read More <i class="fa fa-angle-right"></i></a>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+923322551960">+92 332 2551960</a>
                         </div>
                     </div>
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="blog-img">
-                            <img src="img/myeyes.jpg" alt="My Eyes App">
-                        </div>
-                        <div class="blog-text">
-                            <h2>My Eyes – Assistive Vision App</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Mobile App, AI</p>
-                                <p><i class="far fa-calendar-alt"></i>23-Jan-2025</p>
-                            </div>
-                            <p>
-                                Flutter based app with integrated YOLO model for real‑time object detection and Text‑to‑Speech to assist blind users. Recognized with an HEC stipend of PKR 80,000.
-                            </p>
-                            <a class="btn" href="blog-my-eyes.html">Read More <i class="fa fa-angle-right"></i></a>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Islamabad, Pakistan</p>
                         </div>
                     </div>
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="blog-img">
-                            <img src="img/virtual.jpg" alt="AI Virtual Assistant">
-                        </div>
-                        <div class="blog-text">
-                            <h2>AI Virtual Assistant – Daily Tasks Automation</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>AI, Automation</p>
-                                <p><i class="far fa-calendar-alt"></i>13-June-2024</p>
-                            </div>
-                            <p>
-                                An AI Virtual Assistant that handles daily tasks — sends emails, performs web searches, schedules reminders, manages calendar events, and automates simple workflows to boost productivity.
-                            </p>
-                            <a class="btn" href="blog-virtual-assistant.html">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="blog-img">
-                            <img src="img/facial.jpg" alt="Facial Emotion Recognition">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Facial Emotion Recognition with CNN</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Computer Vision, Deep Learning</p>
-                                <p><i class="far fa-calendar-alt"></i>10-June-2024</p>
-                            </div>
-                            <p>
-                                A real‑time Facial Emotion Recognition system built with a custom CNN model that detects emotions like happy, sad, angry, surprise, neutral, and more from live camera feed.
-                            </p>
-                            <a class="btn" href="blog-facial-emotion-recognition.html">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-item wow fadeInUp" data-wow-delay="1.1s">
-                        <div class="blog-img">
-                            <img src="img/brain.jpg" alt="Brain Tumor Detection">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Brain Tumor Detection with CNN</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Deep Learning, Medical Imaging</p>
-                                <p><i class="far fa-calendar-alt"></i>4-Nov-2024</p>
-                            </div>
-                            <p>
-                                A CNN-based classifier that detects the presence of brain tumors from MRI scans, featuring careful preprocessing, augmentation, and class‑balanced training for robust results.
-                            </p>
-                            <a class="btn" href="blog-brain-tumor-detection.html">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-item wow fadeInUp" data-wow-delay="1.3s">
-                        <div class="blog-img">
-                            <img src="img/uni.jpg" alt="UniGuide – University Recommendation System">
-                        </div>
-                        <div class="blog-text">
-                            <h2>UniGuide – Personalized University & Scholarship Recommendations</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Recommender Systems, AI</p>
-                                <p><i class="far fa-calendar-alt"></i>8-April-2025</p>
-                            </div>
-                            <p>
-                                A personalized recommendation system that suggests universities and relevant scholarships based on user preferences like program, budget, location, scores, and deadlines.
-                            </p>
-                            <a class="btn" href="blog-uniguide.html">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com/mfarhan-113" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muhammad-farhan-3045a6241" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/farhan_king_46" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/m.farhan.d_113" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+                <form class="contact-form reveal-up" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required placeholder=" ">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
             </div>
         </div>
-        <!-- Blog End -->
+    </section>
 
-
-<!-- Footer Start -->
-        <div class="footer wow fadeIn" data-wow-delay="0.3s">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="footer-info">
-                        <h2>Muhammad Farhan</h2>
-                        <h3>49 Street, Islamabad, Pakistan</h3>
-                        <div class="footer-menu">
-                            <p>+92 332 2551960</p>
-                            <p>officialforwork113@gmail.com</p>
-                        </div>
-                        <div class="footer-social">
-                            <a href="https://x.com/farhan_king_46?t=zTujarl1BzQeAhTxuscLbg&s=09"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/Farhan51960"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/m.farhan.d_113?igsh=MTlldGZ1NHgzMTVubg%3D%3D"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/muhammad-farhan-3045a6241"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/mfarhan-113"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home">MF<span>.</span></a>
+                    <p>AI Engineer & Full Stack Developer</p>
                 </div>
-                <div class="container copyright">
-                    <p>&copy; <a href="#">Muhammad Farhan</a>, All Right Reserved | 
-					
-					<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="#">Muhammad Farhan</a></p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/mfarhan-113" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammad-farhan-3045a6241" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/farhan_king_46" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/m.farhan.d_113" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Muhammad Farhan. All rights reserved.</p>
+            </div>
         </div>
-        <!-- Footer End -->
-        
-        
-        <!-- Back to top button -->
-        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
-        
-        <!-- Pre Loader -->
-        <div id="loader" class="show">
-            <div class="loader"></div>
-        </div>
+    </footer>
 
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        
-        <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
 </html>
