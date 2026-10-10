@@ -23,16 +23,11 @@
     <!-- Favicon SVG -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='40' font-family='Arial' font-weight='700' fill='%2306b6d4'%3EMF%3C/text%3E%3C/svg%3E">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/vendor/fontawesome.min.css">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/redesign.css">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -109,247 +104,39 @@
         </div>
         <div class="container hero-container">
             <div class="hero-content">
-                <p class="hero-greeting reveal-up">Hi there, I'm</p>
-                <h1 class="hero-name reveal-up">Muhammad<br><span class="gradient-text">Farhan</span></h1>
+                <p class="hero-greeting reveal-up">AI ENGINEER / ISLAMABAD, PK</p>
+                <h1 class="hero-name reveal-up">Muhammad<br><span class="name-secondary">Farhan.</span></h1>
                 <div class="hero-role reveal-up">
-                    <strong>AI Engineer</strong><br><span>Full Stack Developer / Software Engineer experience</span>
+                    <strong>Intelligence, engineered.</strong><span>Full Stack Developer / Software Engineer</span>
                 </div>
                 <p class="hero-desc reveal-up">Building intelligent systems that solve real-world problems — from computer vision pipelines to production AI platforms.</p>
                 <div class="hero-cta reveal-up">
                     <a href="#work" class="btn btn-primary">
-                        <span>Explore Work</span>
+                        <span>View Work</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="Farhan-CV.pdf" download class="btn btn-outline">
-                        <span>Download CV</span>
-                        <i class="fas fa-download"></i>
-                    </a>
+                    <a href="#contact" class="btn btn-outline"><span>Contact</span><span aria-hidden="true">↗</span></a>
                 </div>
             </div>
-            <div class="hero-social reveal-up">
-                <div class="social-line"></div>
-                <a href="https://github.com/mfarhan-113" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/muhammad-farhan-3045a6241" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://x.com/farhan_king_46" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.instagram.com/m.farhan.d_113" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <div class="social-line"></div>
+            <div class="hero-globe reveal-up">
+                <div class="globe-heading"><span class="eyebrow">A local base. A global perspective.</span><span class="globe-live"><span></span> Islamabad, PK</span></div>
+                <canvas id="locationGlobe" width="720" height="720" tabindex="0" role="img" aria-label="Rotatable 3D Earth. Islamabad marked in red. Drag or use arrow keys to rotate. Home resets." aria-describedby="globeInstructions"></canvas>
+                <div class="globe-location"><span class="hotspot-dot"></span><strong>Islamabad</strong><span>33.6844° N · 73.0479° E</span></div>
+                <div class="globe-controls"><p id="globeInstructions">Drag to explore <span>·</span> Arrow keys to rotate</p><button type="button" id="globeReset" aria-label="Reset globe to Islamabad">Reset view ↗</button></div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
             <span>Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </section>
 
     <!-- ==================== ABOUT ==================== -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-tag">About Me</span>
-                <h2 class="section-title">Passionate AI Engineer &<br><span class="gradient-text">Full Stack Developer</span></h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text reveal-up">
-                    <p>Results-driven Computer Vision and AI Engineer with hands-on experience building and deploying CV/ML systems in production environments. I specialize in deep learning, real-time computer vision, and end-to-end full-stack development.</p>
-                    <p>From healthcare RCM platforms to AI telephone assistants, I've delivered production-grade solutions across healthcare, legal tech, marketing analytics, and fitness. I work across the full stack — designing architectures, training models, building APIs, and deploying on cloud infrastructure.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-count="12">0</h3>
-                            <p>Projects Delivered</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-count="3">0</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-count="8">0</h3>
-                            <p>AI Models Deployed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-count="15">0</h3>
-                            <p>Technologies</p>
-                        </div>
-                    </div>
-                    <div class="about-cta">
-                        <a href="Farhan-CV.pdf" download class="btn btn-primary">
-                            <span>Download Resume</span>
-                            <i class="fas fa-download"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="about-skills reveal-up">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-eye"></i> Computer Vision & ML</h4>
-                        <div class="skill-tags">
-                            <span>Object Detection</span>
-                            <span>Image Segmentation</span>
-                            <span>CNNs</span>
-                            <span>GANs</span>
-                            <span>Transformers</span>
-                            <span>Transfer Learning</span>
-                            <span>Edge AI</span>
-                            <span>YOLO</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-code"></i> Frameworks & Libraries</h4>
-                        <div class="skill-tags">
-                            <span>PyTorch</span>
-                            <span>TensorFlow</span>
-                            <span>OpenCV</span>
-                            <span>FastAPI</span>
-                            <span>Flask</span>
-                            <span>Django</span>
-                            <span>React</span>
-                            <span>Next.js</span>
-                            <span>LangChain</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-terminal"></i> Languages</h4>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>TypeScript</span>
-                            <span>C++</span>
-                            <span>Dart</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-cloud"></i> Cloud & MLOps</h4>
-                        <div class="skill-tags">
-                            <span>Docker</span>
-                            <span>Azure</span>
-                            <span>AWS</span>
-                            <span>CI/CD</span>
-                            <span>GitHub Actions</span>
-                            <span>Firebase</span>
-                            <span>Supabase</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-database"></i> Databases</h4>
-                        <div class="skill-tags">
-                            <span>PostgreSQL</span>
-                            <span>MongoDB</span>
-                            <span>MySQL</span>
-                            <span>Redis</span>
-                            <span>SQLite</span>
-                        </div>
-                    </div>
-                </div>
-            </div>            <!-- Education -->
-            <div class="education-block reveal-up">
-                <div class="section-header" style="margin-top: 4rem;">
-                    <span class="section-tag">Education</span>
-                </div>
-                <div class="education-card">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-content">
-                        <h3>Bachelor of Science in Computer Science</h3>
-                        <h4>Bahria University Islamabad <span>| Oct 2021 — Jun 2025</span></h4>
-                        <p><strong>CGPA: 3.54 / 4.00</strong> | Thesis: Cartoon Sketch Colorization (AI-based GAN system)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="education-block reveal-up">
-                <div class="section-header" style="margin-top: 2rem;">
-                    <span class="section-tag">Certifications</span>
-                </div>
-                <div class="cert-grid">
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Oracle Generative AI Professional</span>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Google Data Analytics Professional</span>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-trophy"></i>
-                        <span>Team Lead — NASCON'24 Speed Programming, FAST</span>
-                    </div>
-                </div>
-            </div><div class="location-panel"><div><span class="section-tag">Based in Islamabad</span><h3>A local base. A global perspective.</h3><p>Rotate with your mouse, touch, or arrow keys. The red marker identifies Islamabad, Pakistan.</p><button type="button" class="btn btn-outline" id="globeReset">Reset view</button></div><canvas id="locationGlobe" width="600" height="480" tabindex="0" role="img" aria-label="Interactive 3D globe. Islamabad marked in red. Arrow keys rotate; Home resets."></canvas></div>
-        </div>
-    </section>
-
-    <!-- ==================== EXPERIENCE ==================== -->
-    <section id="experience" class="section section-alt">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-tag">Career</span>
-                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item reveal-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-badge">Current</div>
-                        <div class="timeline-date">Dec 2025 — Present</div>
-                        <h3>AI Engineer</h3>
-                        <h4>AI Data House <span>| Islamabad, Pakistan</span></h4>
-                        <ul>
-                            <li>Designing and deploying custom computer vision models across OpenAI Vision, Azure AI Vision, AWS Rekognition, and custom-trained architectures</li>
-                            <li>Built hybrid CV pipeline for electrical diagram analysis with 85% accuracy combining OCR and vision model outputs</li>
-                            <li>Developed and deployed RAG-based AI systems on Azure (AI Services, Container Apps) and AWS (EC2, S3)</li>
-                            <li>Delivered OpenClaw-based AI automation agent enabling task execution with full data privacy on client hardware</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item reveal-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jul 2025 — Dec 2025</div>
-                        <h3>AI Engineer</h3>
-                        <h4>NTIS PAK <span>| Islamabad, Pakistan</span></h4>
-                        <ul>
-                            <li>Developed and optimized AI models for automated translation using Python, TensorFlow, Keras, and ElevenLabs</li>
-                            <li>Led team implementing NLP and predictive analytics to replace manual interpretation with AI-driven systems</li>
-                            <li>Automated translation workflows for UK-based clients, improving speed, accuracy, and scalability</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item reveal-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Mar 2025 — Jul 2025</div>
-                        <h3>AI Engineer</h3>
-                        <h4>Amal Axis <span>| Islamabad, Pakistan</span></h4>
-                        <ul>
-                            <li>Developed and maintained AI applications with scalable, reusable code and managed cloud deployments</li>
-                            <li>Implemented and optimized ML/DL models; collaborated with cross-functional teams on product delivery</li>
-                            <li>Troubleshot performance bottlenecks and stayed current with Python frameworks and ML research</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item reveal-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Feb 2023 — Present</div>
-                        <h3>Freelance AI & Full Stack Developer</h3>
-                        <h4>Remote <span>| Pakistan</span></h4>
-                        <ul>
-                            <li>Architected NextNRGie full-stack SaaS with FastAPI, MySQL, CI/CD, Docker, and React frontend</li>
-                            <li>Delivered end-to-end AI and full-stack solutions including model training, backend APIs, and responsive frontends for multiple clients</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <!-- ==================== PROJECTS ==================== -->
     <section id="work" class="section">
         <div class="container">
             <div class="section-header reveal-up">
-                <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <span class="section-tag">01 / Selected work</span>
+                <h2 class="section-title">Ideas into<br><span class="gradient-text">working systems.</span></h2>
                 <p class="section-subtitle">A selection of projects I've built — from AI platforms to production systems</p>
             </div>
 
@@ -530,8 +317,84 @@
         </div>
     </section>
 
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">02 / Experience</span>
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Current</div>
+                        <div class="timeline-date">Dec 2025 — Present</div>
+                        <h3>AI Engineer</h3>
+                        <h4>AI Data House <span>| Islamabad, Pakistan</span></h4>
+                        <ul>
+                            <li>Designing and deploying custom computer vision models across OpenAI Vision, Azure AI Vision, AWS Rekognition, and custom-trained architectures</li>
+                            <li>Built hybrid CV pipeline for electrical diagram analysis with 85% accuracy combining OCR and vision model outputs</li>
+                            <li>Developed and deployed RAG-based AI systems on Azure (AI Services, Container Apps) and AWS (EC2, S3)</li>
+                            <li>Delivered OpenClaw-based AI automation agent enabling task execution with full data privacy on client hardware</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2025 — Dec 2025</div>
+                        <h3>AI Engineer</h3>
+                        <h4>NTIS PAK <span>| Islamabad, Pakistan</span></h4>
+                        <ul>
+                            <li>Developed and optimized AI models for automated translation using Python, TensorFlow, Keras, and ElevenLabs</li>
+                            <li>Led team implementing NLP and predictive analytics to replace manual interpretation with AI-driven systems</li>
+                            <li>Automated translation workflows for UK-based clients, improving speed, accuracy, and scalability</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Mar 2025 — Jul 2025</div>
+                        <h3>AI Engineer</h3>
+                        <h4>Amal Axis <span>| Islamabad, Pakistan</span></h4>
+                        <ul>
+                            <li>Developed and maintained AI applications with scalable, reusable code and managed cloud deployments</li>
+                            <li>Implemented and optimized ML/DL models; collaborated with cross-functional teams on product delivery</li>
+                            <li>Troubleshot performance bottlenecks and stayed current with Python frameworks and ML research</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2023 — Present</div>
+                        <h3>Freelance AI & Full Stack Developer</h3>
+                        <h4>Remote <span>| Pakistan</span></h4>
+                        <ul>
+                            <li>Architected NextNRGie full-stack SaaS with FastAPI, MySQL, CI/CD, Docker, and React frontend</li>
+                            <li>Delivered end-to-end AI and full-stack solutions including model training, backend APIs, and responsive frontends for multiple clients</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="writing" class="section"><div class="container"><div class="section-header"><span class="section-tag">03 / Writing</span><h2 class="section-title">Notes from the work</h2></div><div class="writing-grid" id="writingGrid"><a class="writing-card" href="blog-brain-tumor-detection.html"><h3>Brain Tumor Detection with CNN</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-facial-emotion-recognition.html"><h3>Facial Emotion Recognition with CNN</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-jhelum-news.html"><h3>Jhelum News</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-my-eyes.html"><h3>My Eyes – Assistive Vision App</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-road-layer-detection.html"><h3>Road Layer Detection</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-uniguide.html"><h3>UniGuide – Personalized University & Scholarship Recommendations</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-virtual-assistant.html"><h3>AI Virtual Assistant – Daily Tasks Automation</h3><span>Read article →</span></a></div></div></section>
+
     <!-- ==================== PROJECT MODAL ==================== -->
-    <div class="modal-overlay" id="projectModal" aria-hidden="true">
+    <div class="modal-overlay" id="projectModal" aria-hidden="true" inert>
         <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
             <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
             <div class="modal-body">
@@ -559,7 +422,141 @@
     </div>
 
     <!-- ==================== SERVICES ==================== -->
-    <section id="services" class="section section-alt">
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">04 / About</span>
+                <h2 class="section-title">Passionate AI Engineer &<br><span class="gradient-text">Full Stack Developer</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-up">
+                    <p>Results-driven Computer Vision and AI Engineer with hands-on experience building and deploying CV/ML systems in production environments. I specialize in deep learning, real-time computer vision, and end-to-end full-stack development.</p>
+                    <p>From healthcare RCM platforms to AI telephone assistants, I've delivered production-grade solutions across healthcare, legal tech, marketing analytics, and fitness. I work across the full stack — designing architectures, training models, building APIs, and deploying on cloud infrastructure.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-count="12">0</h3>
+                            <p>Projects Delivered</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-count="3">0</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-count="8">0</h3>
+                            <p>AI Models Deployed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-count="15">0</h3>
+                            <p>Technologies</p>
+                        </div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="Farhan-CV.pdf" download class="btn btn-primary">
+                            <span>Download Resume</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-skills reveal-up">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-eye"></i> Computer Vision & ML</h4>
+                        <div class="skill-tags">
+                            <span>Object Detection</span>
+                            <span>Image Segmentation</span>
+                            <span>CNNs</span>
+                            <span>GANs</span>
+                            <span>Transformers</span>
+                            <span>Transfer Learning</span>
+                            <span>Edge AI</span>
+                            <span>YOLO</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-code"></i> Frameworks & Libraries</h4>
+                        <div class="skill-tags">
+                            <span>PyTorch</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                            <span>FastAPI</span>
+                            <span>Flask</span>
+                            <span>Django</span>
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>LangChain</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-terminal"></i> Languages</h4>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>C++</span>
+                            <span>Dart</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-cloud"></i> Cloud & MLOps</h4>
+                        <div class="skill-tags">
+                            <span>Docker</span>
+                            <span>Azure</span>
+                            <span>AWS</span>
+                            <span>CI/CD</span>
+                            <span>GitHub Actions</span>
+                            <span>Firebase</span>
+                            <span>Supabase</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-database"></i> Databases</h4>
+                        <div class="skill-tags">
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                            <span>MySQL</span>
+                            <span>Redis</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>            <!-- Education -->
+            <div class="education-block reveal-up">
+                <div class="section-header" style="margin-top: 4rem;">
+                    <span class="section-tag">Education</span>
+                </div>
+                <div class="education-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-content">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <h4>Bahria University Islamabad <span>| Oct 2021 — Jun 2025</span></h4>
+                        <p><strong>CGPA: 3.54 / 4.00</strong> | Thesis: Cartoon Sketch Colorization (AI-based GAN system)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="education-block reveal-up">
+                <div class="section-header" style="margin-top: 2rem;">
+                    <span class="section-tag">Certifications</span>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Oracle Generative AI Professional</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Google Data Analytics Professional</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Team Lead — NASCON'24 Speed Programming, FAST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="services" class="section section-alt">
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-tag">What I Do</span>
@@ -600,18 +597,12 @@
         </div>
     </section>
 
-<section id="writing" class="section"><div class="container"><div class="section-header"><span class="section-tag">Writing</span><h2 class="section-title">Notes from the work</h2></div><div class="writing-grid" id="writingGrid"><a class="writing-card" href="blog-brain-tumor-detection.html"><h3>Brain Tumor Detection with CNN</h3><span>Read article →</span></a>
-<a class="writing-card" href="blog-facial-emotion-recognition.html"><h3>Facial Emotion Recognition with CNN</h3><span>Read article →</span></a>
-<a class="writing-card" href="blog-jhelum-news.html"><h3>Jhelum News</h3><span>Read article →</span></a>
-<a class="writing-card" href="blog-my-eyes.html"><h3>My Eyes – Assistive Vision App</h3><span>Read article →</span></a>
-<a class="writing-card" href="blog-road-layer-detection.html"><h3>Road Layer Detection</h3><span>Read article →</span></a>
-<a class="writing-card" href="blog-uniguide.html"><h3>UniGuide – Personalized University & Scholarship Recommendations</h3><span>Read article →</span></a>
-<a class="writing-card" href="blog-virtual-assistant.html"><h3>AI Virtual Assistant – Daily Tasks Automation</h3><span>Read article →</span></a></div></div></section>
+
     <!-- ==================== CONTACT ==================== -->
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header reveal-up">
-                <span class="section-tag">Get In Touch</span>
+                <span class="section-tag">05 / Contact</span>
                 <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
                 <p class="section-subtitle">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
             </div>
@@ -704,6 +695,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+<script src="js/globe-land.js"></script>
 <script src="js/globe.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>

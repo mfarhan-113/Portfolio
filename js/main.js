@@ -176,27 +176,34 @@ function renderCaseStudy(projectId) {
   const slides = [
     ['Homepage hero', 'Braidscope', 'Marketing analytics and AI in one workspace.'],
     ['Problem', 'Connected tools, one workspace', 'Bringing marketing, CRM, ecommerce, and analytics tools together.'],
-    ['Demo workspace', 'Workspace view', ''],
-    ['Dashboard', 'Dashboard view', ''],
+    ['Demo workspace', 'One workspace. Connected tools.', 'Marketing, CRM, ecommerce, and analytics tools in one client workspace.'],
+    ['Dashboard', 'A clearer view of performance.', 'An overview of KPIs, trends, and campaign performance.'],
     ['Integrations', 'Connected platforms', 'GA4, Google Ads, Meta Ads, Klaviyo, and HubSpot.'],
-    ['Branding preview', 'Brand presentation', ''],
+    ['Branding preview', 'Braidscope', 'Marketing analytics and AI in one workspace.'],
     ['Closing', 'End-to-end development', 'Next.js · FastAPI · PostgreSQL · Redis · MCP']
   ];
   const panel = document.createElement('section');
   panel.id = 'caseStudy'; panel.className = 'case-study';
   panel.setAttribute('aria-label', 'Braidscope seven-slide case study');
   panel.innerHTML = '<p class="case-study-label"></p><div class="case-study-frame"><h3></h3><p></p></div><div class="carousel-controls"><button type="button" class="btn btn-outline">Previous</button><span role="status" aria-live="polite"></span><button type="button" class="btn btn-outline">Next</button></div>';
+  panel.insertAdjacentHTML('beforeend', '<p class="case-study-disclaimer">Editorial case study · Text layouts, not product screenshots.</p>');
   qs('.modal-body').prepend(panel);
   let index = 0;
   const buttons = qsa('button', panel);
   function show() {
     qs('.case-study-label', panel).textContent = slides[index][0];
+    qs('.case-study-frame', panel).dataset.slide = String(index + 1).padStart(2, '0');
     qs('h3', panel).textContent = slides[index][1];
     qs('.case-study-frame p', panel).textContent = slides[index][2];
     qs('[role="status"]', panel).textContent = `${index + 1} / 7`;
   }
   buttons[0].onclick = () => {index = (index + 6) % 7; show();};
   buttons[1].onclick = () => {index = (index + 1) % 7; show();};
+  panel.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault(); index = (index + (event.key === 'ArrowLeft' ? 6 : 1)) % 7; show();
+    }
+  });
   show();
 }
 
@@ -259,11 +266,14 @@ function initNavigation() {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  mobileMenu?.setAttribute("inert", "");
   toggle?.addEventListener("click", () => {
     const isOpen = toggle.classList.toggle("active");
     mobileMenu?.classList.toggle("active", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
     mobileMenu?.setAttribute("aria-hidden", String(!isOpen));
+    if (mobileMenu) mobileMenu.inert = !isOpen;
+    if (isOpen) qs("a", mobileMenu)?.focus();
     document.body.classList.toggle("menu-open", isOpen);
   });
 
@@ -274,10 +284,22 @@ function initNavigation() {
       document.body.classList.remove("menu-open");
       toggle?.setAttribute("aria-expanded", "false");
       mobileMenu?.setAttribute("aria-hidden", "true");
+      if (mobileMenu) mobileMenu.inert = true;
     });
   });
 
-  const sections = qsa("section[id]");
+  document.addEventListener('keydown', event => {
+    if (!mobileMenu?.classList.contains('active')) return;
+    if (event.key === 'Escape') {
+      toggle.click(); toggle.focus();
+    }
+    if (event.key === 'Tab') {
+      const links = qsa('a[href]', mobileMenu);
+      if (event.shiftKey && document.activeElement === links[0]) {event.preventDefault(); links.at(-1).focus();}
+      else if (!event.shiftKey && document.activeElement === links.at(-1)) {event.preventDefault(); links[0].focus();}
+    }
+  });
+  const sections = qsa("section[id]").filter(section => qsa(".nav-link").some(link => link.hash === `#${section.id}`));
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -405,10 +427,12 @@ function initProjectFilters() {
   if (!buttons.length || !cards.length) return;
 
   buttons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.classList.contains("active")));
     button.addEventListener("click", () => {
       const filter = button.dataset.filter;
-      buttons.forEach((item) => item.classList.remove("active"));
+      buttons.forEach((item) => {item.classList.remove("active");item.setAttribute("aria-pressed", "false");});
       button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
 
       cards.forEach((card) => {
         const categories = (card.dataset.category || "").split(" ");
@@ -452,7 +476,14 @@ function initProjectModal() {
       const content = section.querySelector("p, ul, .modal-tech");
       section.hidden = content ? !content.textContent.trim() : false;
     });
+    qs('.modal-pending', modal)?.remove();
+    if (projectId === 'booklender' || projectId === 'silverback') {
+      const note = document.createElement('p'); note.className = 'modal-pending';
+      note.textContent = 'Project details will be added after confirmation.';
+      qs('.modal-body', modal).append(note);
+    }
     renderCaseStudy(projectId);
+    modal.inert = false;
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -465,6 +496,7 @@ function initProjectModal() {
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     qs(`[data-project="${modal.dataset.returnFocus}"]`)?.focus();
+    modal.inert = true;
   }
 
   qsa(".project-card").forEach((card) => {
@@ -477,6 +509,10 @@ function initProjectModal() {
     });
     card.setAttribute("tabindex", "0");
     card.setAttribute("role", "button");
+    card.setAttribute("aria-haspopup", "dialog");
+    card.setAttribute("aria-label", `View ${qs('h3', card).textContent} details`);
+    const detailButton = qs('.project-detail-btn', card);
+    if (detailButton) {detailButton.tabIndex = -1;detailButton.setAttribute('aria-label', card.getAttribute('aria-label'));}
   });
 
   closeButton.addEventListener("click", closeModal);
@@ -533,11 +569,17 @@ function initBackToTop() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
-  initCursor();
+  // Use the native pointer; retain lightweight scroll reveals.
+
   initNavigation();
 
   initRevealAnimations();
   initCounters();
+  qsa('.project-card').forEach((card, index) => {
+    const number = document.createElement('span'); number.className = 'project-number';
+    number.textContent = String(index + 1).padStart(2, '0'); number.setAttribute('aria-hidden', 'true');
+    qs('.project-card-header', card)?.insertBefore(number, qs('.project-card-header', card).children[1]);
+  });
   initProjectFilters();
   initProjectModal();
   initContactForm();
