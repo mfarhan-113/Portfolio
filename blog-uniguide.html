@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UniGuide – Personalized University & Scholarship Recommendations — Muhammad Farhan</title><link rel="stylesheet" href="css/style.css"></head><body><main class="container section article"><a href="index.html#writing">← Back to Writing</a><h1>UniGuide – Personalized University & Scholarship Recommendations</h1>
+              <div class="blog-meta d-flex flex-wrap mb-3">
+                <p class="mb-0 mr-3"><i class="far fa-user"></i> Admin</p>
+                <p class="mb-0 mr-3"><i class="far fa-list-alt"></i> Recommender Systems, AI</p>
+                <p class="mb-0 mr-3"><i class="far fa-calendar-alt"></i> 8-April-2025</p>
+              </div>
+
+              <h4 class="text-light mb-3">Project Overview</h4>
+              <p>
+                UniGuide is a personalized recommendation system that suggests universities and relevant scholarships based on a user's profile and preferences. It considers program interests, budget constraints, location, academic scores, language tests, and deadlines to produce ranked recommendations.
+              </p>
+
+              <h5 class="text-light mt-4 mb-2">Key Features</h5>
+              <ul>
+                <li>Collects user preferences (interests, budget, GPA/grades, etc).</li>
+                <li>Ranks universities by fit score using multi‑criteria scoring and filters.</li>
+                <li>Recommends scholarships matched to the user's profile and deadlines.</li>
+                <li>Explains why each recommendation is a good fit (transparent scoring).</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Data & Method</h5>
+              <ul>
+                <li>Aggregated program catalogs and scholarship datasets with standardized fields.</li>
+                <li>Hybrid approach: rules/filters for hard constraints and a learned model for ranking (e.g., gradient boosting or neural scoring).</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Tech Stack</h5>
+              <ul>
+                <li>Backend: Python (FastAPI) with a modular recommendation pipeline.</li>
+                <li>Ranking: scikit‑learn for fit scoring.</li>
+                <li>Database: PostgreSQL (normalized program and scholarship tables).</li>
+                <li>Frontend: Responsive UI.</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">How It Works</h5>
+              <ol>
+                <li>Collect user inputs and apply filters (eligibility, budget, location, deadlines).</li>
+                <li>Compute a fit score per program using weighted criteria (scores, cost, ranking).</li>
+                <li>Match scholarships using eligibility rules and rank by relevance and deadline.</li>
+                <li>Present top programs and scholarships with explanations and quick apply links.</li>
+              </ol>
+
+              <h5 class="text-light mt-4 mb-2">Future Enhancements</h5>
+              <ul>
+                <li>Integrate live APIs for rankings, tuition, and scholarship feeds.</li>
+                <li>Personalized weights learned from user feedback.</li>
+                <li>Chat assistant to refine preferences and answer queries.</li>
+              </ul>
+
+              <div class="mt-4">
+                
+              </main></body></html>

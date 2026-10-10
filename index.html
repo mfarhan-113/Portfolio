@@ -80,14 +80,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">MF<span>.</span></a>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            <div class="nav-links" id="navLinks"><a href="#home" class="nav-link">Home</a><a href="#work" class="nav-link">Work</a><a href="#experience" class="nav-link">Experience</a><a href="#writing" class="nav-link">Writing</a><a href="#about" class="nav-link">About</a><a href="#contact" class="nav-link">Contact</a></div>
             <div class="nav-actions">
                 <a href="Farhan-CV.pdf" download class="btn-cv-nav">
                     <i class="fas fa-download"></i> Resume
@@ -101,21 +94,14 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-        <div class="mobile-menu-links">
-            <a href="#home" class="mobile-link">Home</a>
-            <a href="#about" class="mobile-link">About</a>
-            <a href="#experience" class="mobile-link">Experience</a>
-            <a href="#projects" class="mobile-link">Projects</a>
-            <a href="#services" class="mobile-link">Services</a>
-            <a href="#contact" class="mobile-link">Contact</a>
-            <a href="Farhan-CV.pdf" download class="btn btn-primary mobile-cv">Download CV</a>
+        <div class="mobile-menu-links"><a href="#home" class="mobile-link">Home</a><a href="#work" class="mobile-link">Work</a><a href="#experience" class="mobile-link">Experience</a><a href="#writing" class="mobile-link">Writing</a><a href="#about" class="mobile-link">About</a><a href="#contact" class="mobile-link">Contact</a><a href="Farhan-CV.pdf" download class="btn btn-primary mobile-cv">Download CV</a>
         </div>
     </div>
 
     <!-- ==================== HERO ==================== -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <img src="assets/hero-ai-systems.png" alt="" class="hero-visual" aria-hidden="true">
+
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
             <div class="gradient-orb orb-3"></div>
@@ -126,12 +112,12 @@
                 <p class="hero-greeting reveal-up">Hi there, I'm</p>
                 <h1 class="hero-name reveal-up">Muhammad<br><span class="gradient-text">Farhan</span></h1>
                 <div class="hero-role reveal-up">
-                    <span id="typedText"></span><span class="typed-cursor">|</span>
+                    <strong>AI Engineer</strong><br><span>Full Stack Developer / Software Engineer experience</span>
                 </div>
                 <p class="hero-desc reveal-up">Building intelligent systems that solve real-world problems — from computer vision pipelines to production AI platforms.</p>
                 <div class="hero-cta reveal-up">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View Projects</span>
+                    <a href="#work" class="btn btn-primary">
+                        <span>Explore Work</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="Farhan-CV.pdf" download class="btn btn-outline">
@@ -253,7 +239,41 @@
                         </div>
                     </div>
                 </div>
+            </div>            <!-- Education -->
+            <div class="education-block reveal-up">
+                <div class="section-header" style="margin-top: 4rem;">
+                    <span class="section-tag">Education</span>
+                </div>
+                <div class="education-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-content">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <h4>Bahria University Islamabad <span>| Oct 2021 — Jun 2025</span></h4>
+                        <p><strong>CGPA: 3.54 / 4.00</strong> | Thesis: Cartoon Sketch Colorization (AI-based GAN system)</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Certifications -->
+            <div class="education-block reveal-up">
+                <div class="section-header" style="margin-top: 2rem;">
+                    <span class="section-tag">Certifications</span>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Oracle Generative AI Professional</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Google Data Analytics Professional</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Team Lead — NASCON'24 Speed Programming, FAST</span>
+                    </div>
+                </div>
+            </div><div class="location-panel"><div><span class="section-tag">Based in Islamabad</span><h3>A local base. A global perspective.</h3><p>Rotate with your mouse, touch, or arrow keys. The red marker identifies Islamabad, Pakistan.</p><button type="button" class="btn btn-outline" id="globeReset">Reset view</button></div><canvas id="locationGlobe" width="600" height="480" tabindex="0" role="img" aria-label="Interactive 3D globe. Islamabad marked in red. Arrow keys rotate; Home resets."></canvas></div>
         </div>
     </section>
 
@@ -320,46 +340,12 @@
                 </div>
             </div>
 
-            <!-- Education -->
-            <div class="education-block reveal-up">
-                <div class="section-header" style="margin-top: 4rem;">
-                    <span class="section-tag">Education</span>
-                </div>
-                <div class="education-card">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-content">
-                        <h3>Bachelor of Science in Computer Science</h3>
-                        <h4>Bahria University Islamabad <span>| Oct 2021 — Jun 2025</span></h4>
-                        <p><strong>CGPA: 3.54 / 4.00</strong> | Thesis: Cartoon Sketch Colorization (AI-based GAN system)</p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Certifications -->
-            <div class="education-block reveal-up">
-                <div class="section-header" style="margin-top: 2rem;">
-                    <span class="section-tag">Certifications</span>
-                </div>
-                <div class="cert-grid">
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Oracle Generative AI Professional</span>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Google Data Analytics Professional</span>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-trophy"></i>
-                        <span>Team Lead — NASCON'24 Speed Programming, FAST</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- ==================== PROJECTS ==================== -->
-    <section id="projects" class="section">
+    <section id="work" class="section">
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-tag">Portfolio</span>
@@ -390,9 +376,7 @@
                     <span class="project-badge">AI Platform</span>
                     <h3>Braidscope</h3>
                     <p>Multi-tenant marketing analytics with AI chat, OAuth integrations, live dashboards for GA4, Google Ads, Meta Ads, Klaviyo, and HubSpot.</p>
-                    <div class="project-tags">
-                        <span>React</span><span>FastAPI</span><span>Redis</span><span>Supabase</span><span>Docker</span><span>MCP</span>
-                    </div>
+                    <div class="project-tags"><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>MCP</span></div>
                 </div>
 
                 <!-- Stratum -->
@@ -500,7 +484,7 @@
                         </div>
                     </div>
                     <span class="project-badge">Mobile / AI</span>
-                    <h3>My Eyes</h3>
+                    <h3>My Eyes — Assistive Vision App</h3>
                     <p>Flutter app with YOLO object detection and TTS for real-time assistance for visually impaired users. HEC stipend of PKR 80,000 awarded.</p>
                     <div class="project-tags">
                         <span>Flutter</span><span>YOLO</span><span>TTS</span><span>Dart</span>
@@ -538,8 +522,11 @@
                         <span>TensorFlow</span><span>VGG16</span><span>ResNet</span><span>OpenCV</span>
                     </div>
                 </div>
+<div class="project-card reveal-up" data-category="ai cv" data-project="facial"><div class="project-card-header"><div class="project-icon"><i class="fas fa-code" aria-hidden="true"></i></div><button class="project-detail-btn" aria-label="View Facial Emotion Recognition details"><i class="fas fa-expand" aria-hidden="true"></i></button></div><h3>Facial Emotion Recognition</h3><p>CNN-based facial expression classification from images or a live camera feed.</p></div>
+<div class="project-card reveal-up" data-category="fullstack" data-project="booklender"><div class="project-card-header"><div class="project-icon"><i class="fas fa-code" aria-hidden="true"></i></div><button class="project-detail-btn" aria-label="View BookLender details"><i class="fas fa-expand" aria-hidden="true"></i></button></div><h3>BookLender</h3></div>
+<div class="project-card reveal-up" data-category="fullstack" data-project="silverback"><div class="project-card-header"><div class="project-icon"><i class="fas fa-code" aria-hidden="true"></i></div><button class="project-detail-btn" aria-label="View Silverback Capital details"><i class="fas fa-expand" aria-hidden="true"></i></button></div><h3>Silverback Capital</h3></div>
 
-            </div>
+            </div><div class="lab-panel" id="lab"><span class="section-tag">Interactive Lab</span><h3>Explore a request pipeline</h3><p>An illustrative interaction, independent of project implementations. Step through the stages or play the sequence.</p><ol class="pipeline"><li>Input</li><li>Processing</li><li>Response</li></ol><p id="labStatus" role="status">Ready to explore.</p><button class="btn btn-outline" id="labStep" type="button">Next stage</button> <button class="btn btn-outline" id="labPlay" type="button">Play sequence</button></div>
         </div>
     </section>
 
@@ -613,6 +600,13 @@
         </div>
     </section>
 
+<section id="writing" class="section"><div class="container"><div class="section-header"><span class="section-tag">Writing</span><h2 class="section-title">Notes from the work</h2></div><div class="writing-grid" id="writingGrid"><a class="writing-card" href="blog-brain-tumor-detection.html"><h3>Brain Tumor Detection with CNN</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-facial-emotion-recognition.html"><h3>Facial Emotion Recognition with CNN</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-jhelum-news.html"><h3>Jhelum News</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-my-eyes.html"><h3>My Eyes – Assistive Vision App</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-road-layer-detection.html"><h3>Road Layer Detection</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-uniguide.html"><h3>UniGuide – Personalized University & Scholarship Recommendations</h3><span>Read article →</span></a>
+<a class="writing-card" href="blog-virtual-assistant.html"><h3>AI Virtual Assistant – Daily Tasks Automation</h3><span>Read article →</span></a></div></div></section>
     <!-- ==================== CONTACT ==================== -->
     <section id="contact" class="section">
         <div class="container">
@@ -689,7 +683,7 @@
                 <div class="footer-links">
                     <a href="#about">About</a>
                     <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
+                    <a href="#work">Work</a><a href="#writing">Writing</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
@@ -710,6 +704,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+<script src="js/globe.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
 </body>

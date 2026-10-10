@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Virtual Assistant – Daily Tasks Automation — Muhammad Farhan</title><link rel="stylesheet" href="css/style.css"></head><body><main class="container section article"><a href="index.html#writing">← Back to Writing</a><h1>AI Virtual Assistant – Daily Tasks Automation</h1>
+              <div class="blog-meta d-flex flex-wrap mb-3">
+                <p class="mb-0 mr-3"><i class="far fa-user"></i> Admin</p>
+                <p class="mb-0 mr-3"><i class="far fa-list-alt"></i> AI, Automation</p>
+                <p class="mb-0 mr-3"><i class="far fa-calendar-alt"></i> 13-June-2024</p>
+              </div>
+
+              <h4 class="text-light mb-3">Project Overview</h4>
+              <p>
+                This AI Virtual Assistant intelligently handles everyday tasks. It understands natural language instructions,
+                sends emails, performs web searches, schedules reminders and calendar events, and automates lightweight
+                workflows to boost productivity.
+              </p>
+
+              <h5 class="text-light mt-4 mb-2">Key Features</h5>
+              <ul>
+                <li>Compose and send emails (with attachments) using smart templates and context awareness</li>
+                <li>Perform web search (news, docs, references) and return concise summaries</li>
+                <li>Schedule, cancel, and update reminders and Google Calendar events</li>
+                <li>Maintain notes, build to‑do lists, and set follow‑ups</li>
+                <li>Voice input/output (Speech‑to‑Text and Text‑to‑Speech) for optional hands‑free mode</li>
+                <li>Custom workflows, e.g., “Schedule a 9 AM client follow‑up email tomorrow and attach the meeting link”</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">Tech Stack</h5>
+              <ul>
+                <li>Python with FastAPI backend (modular agents)</li>
+                <li>LLM orchestration via LangChain/LLM Tools</li>
+                <li>Email: SMTP or Gmail API</li>
+                <li>Calendar: Google Calendar API</li>
+                <li>Web Search: SerpAPI or Bing Web Search API</li>
+                <li>Speech: Whisper STT and a TTS engine (optional)</li>
+              </ul>
+
+              <h5 class="text-light mt-4 mb-2">How It Works</h5>
+              <ol>
+                <li>Detects intent from the user instruction (email, search, reminder, etc.).</li>
+                <li>Selects the relevant tool and executes the action securely.</li>
+                <li>Returns a clear summary or artifact (email draft, search summary, event created, etc.).</li>
+              </ol>
+
+              <h5 class="text-light mt-4 mb-2">Sample Commands</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code>
+"Schedule a 10 AM meeting tomorrow and invite me, Ali, and Sara"
+"Find the latest 5 credible links on this research topic and write a short summary"
+"Draft a polite follow-up email to the client: payment reminder for the August invoice"
+              </code></pre>
+
+              <h5 class="text-light mt-4 mb-2">Privacy & Safety</h5>
+              <p>
+                Credentials and API keys are stored securely (environment variables/secret manager). For sensitive data, explicit consent is
+                required and a minimal logging policy is followed.
+              </p>
+
+              <div class="mt-4">
+                
+              </main></body></html>

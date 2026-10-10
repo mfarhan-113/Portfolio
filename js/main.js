@@ -1,10 +1,13 @@
 const projectDetails = {
+  facial: {badge: "Computer Vision", title: "Facial Emotion Recognition", subtitle: "CNN-based facial expression classification.", overview: "A real-time CNN system classifying facial expressions from images or a live camera feed.", features: ["Image and webcam inference.", "Preprocessing and augmentation of grayscale face images.", "Multi-class emotion prediction with softmax output."], tech: ["CNN", "OpenCV"], role: "Built the facial emotion recognition system."},
+  booklender: {badge: "Project", title: "BookLender", subtitle: "", overview: "", features: [], tech: [], role: ""},
+  silverback: {badge: "Project", title: "Silverback Capital", subtitle: "", overview: "", features: [], tech: [], role: ""},
   braidscope: {
     badge: "AI Marketing Intelligence",
     title: "Braidscope",
     subtitle: "Multi-tenant marketing analytics platform with AI chat over connected data.",
     overview:
-      "Braidscope brings marketing, CRM, ecommerce, and analytics tools into one client workspace. I worked across the AI and integration layer, building OAuth-backed connectors, platform dashboards, Ask AI workflows, Redis-backed caching, and production deployment flows.",
+      "Braidscope brings marketing, CRM, ecommerce, and analytics tools into one client workspace. I worked on end-to-end development.",
     features: [
       "Multi-client workspace architecture with Supabase authentication and RLS.",
       "OAuth integrations for GA4, Google Ads, Meta Ads, Klaviyo, HubSpot, Shopify, OpenRouter, OpenAI, and Claude BYOK.",
@@ -13,9 +16,8 @@ const projectDetails = {
       "Redis stale-while-revalidate caching to reduce repeated external API calls and keep dashboards fast.",
       "Secure server-side token storage, encrypted API keys, Docker Compose deployment, Caddy HTTPS, and GitHub Actions CI/CD."
     ],
-    tech: ["React", "Vite", "FastAPI", "Python", "Supabase", "PostgreSQL", "Redis", "Docker", "Caddy", "GitHub Actions", "MCP", "Recharts"],
-    role:
-      "Full-stack AI integration engineer across frontend dashboards, backend OAuth flows, MCP-style orchestration, caching, deployment, and production debugging."
+    tech: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "MCP"],
+    role: "End-to-end development."
   },
   stratum: {
     badge: "Healthcare RCM Platform",
@@ -121,7 +123,7 @@ const projectDetails = {
   },
   myeyes: {
     badge: "Assistive AI",
-    title: "My Eyes",
+    title: "My Eyes — Assistive Vision App",
     subtitle: "Mobile computer-vision assistant for visually impaired users.",
     overview:
       "My Eyes is an assistive mobile app that uses object detection and speech feedback to help visually impaired users understand their surroundings in real time.",
@@ -167,6 +169,36 @@ const projectDetails = {
 };
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function renderCaseStudy(projectId) {
+  qs('#caseStudy')?.remove();
+  if (projectId !== 'braidscope') return;
+  const slides = [
+    ['Homepage hero', 'Braidscope', 'Marketing analytics and AI in one workspace.'],
+    ['Problem', 'Connected tools, one workspace', 'Bringing marketing, CRM, ecommerce, and analytics tools together.'],
+    ['Demo workspace', 'Workspace view', ''],
+    ['Dashboard', 'Dashboard view', ''],
+    ['Integrations', 'Connected platforms', 'GA4, Google Ads, Meta Ads, Klaviyo, and HubSpot.'],
+    ['Branding preview', 'Brand presentation', ''],
+    ['Closing', 'End-to-end development', 'Next.js · FastAPI · PostgreSQL · Redis · MCP']
+  ];
+  const panel = document.createElement('section');
+  panel.id = 'caseStudy'; panel.className = 'case-study';
+  panel.setAttribute('aria-label', 'Braidscope seven-slide case study');
+  panel.innerHTML = '<p class="case-study-label"></p><div class="case-study-frame"><h3></h3><p></p></div><div class="carousel-controls"><button type="button" class="btn btn-outline">Previous</button><span role="status" aria-live="polite"></span><button type="button" class="btn btn-outline">Next</button></div>';
+  qs('.modal-body').prepend(panel);
+  let index = 0;
+  const buttons = qsa('button', panel);
+  function show() {
+    qs('.case-study-label', panel).textContent = slides[index][0];
+    qs('h3', panel).textContent = slides[index][1];
+    qs('.case-study-frame p', panel).textContent = slides[index][2];
+    qs('[role="status"]', panel).textContent = `${index + 1} / 7`;
+  }
+  buttons[0].onclick = () => {index = (index + 6) % 7; show();};
+  buttons[1].onclick = () => {index = (index + 1) % 7; show();};
+  show();
+}
 
 function qs(selector, scope = document) {
   return scope.querySelector(selector);
@@ -416,16 +448,23 @@ function initProjectModal() {
     fields.role.textContent = detail.role || "";
     fields.roleSection.style.display = detail.role ? "" : "none";
 
+    qsa(".modal-section", modal).forEach(section => {
+      const content = section.querySelector("p, ul, .modal-tech");
+      section.hidden = content ? !content.textContent.trim() : false;
+    });
+    renderCaseStudy(projectId);
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     closeButton.focus();
+    modal.dataset.returnFocus = projectId;
   }
 
   function closeModal() {
     modal.classList.remove("active");
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    qs(`[data-project="${modal.dataset.returnFocus}"]`)?.focus();
   }
 
   qsa(".project-card").forEach((card) => {
@@ -446,6 +485,11 @@ function initProjectModal() {
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && modal.classList.contains("active")) closeModal();
+    if (event.key === "Tab" && modal.classList.contains("active")) {
+      const items = qsa('button:not([disabled]), a[href], [tabindex="0"]', modal).filter(el => !el.closest('[hidden]'));
+      if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); items.at(-1).focus(); }
+      else if (!event.shiftKey && document.activeElement === items.at(-1)) { event.preventDefault(); items[0].focus(); }
+    }
   });
 }
 
@@ -491,11 +535,23 @@ document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
   initCursor();
   initNavigation();
-  initTypewriter();
+
   initRevealAnimations();
   initCounters();
   initProjectFilters();
   initProjectModal();
   initContactForm();
   initBackToTop();
+  const stages = qsa('.pipeline li');
+  let stage = -1, timer = null;
+  function step() {
+    stage = (stage + 1) % stages.length;
+    stages.forEach((item, index) => item.classList.toggle('active', index === stage));
+    qs('#labStatus').textContent = `Stage ${stage + 1}: ${stages[stage].textContent}`;
+  }
+  qs('#labStep')?.addEventListener('click', step);
+  qs('#labPlay')?.addEventListener('click', () => {
+    if (timer) {clearInterval(timer); timer = null; qs('#labPlay').textContent = 'Play sequence'; return;}
+    step(); timer = setInterval(step, 1200); qs('#labPlay').textContent = 'Pause sequence';
+  });
 });
